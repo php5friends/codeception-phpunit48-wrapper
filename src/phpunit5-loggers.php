@@ -109,10 +109,10 @@ namespace PHPUnit\Util\Log {
              * An error occurred.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addError(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addError(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->writeCase(
                     'error',
@@ -169,10 +169,10 @@ namespace PHPUnit\Util\Log {
              * Incomplete test.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addIncompleteTest(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->writeCase(
                     'error',
@@ -189,10 +189,10 @@ namespace PHPUnit\Util\Log {
              * Risky test.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addRiskyTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addRiskyTest(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->writeCase(
                     'error',
@@ -209,10 +209,10 @@ namespace PHPUnit\Util\Log {
              * Skipped test.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addSkippedTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addSkippedTest(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->writeCase(
                     'error',
@@ -394,10 +394,10 @@ namespace PHPUnit\Util\Log {
              * An error occurred.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addError(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addError(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->writeNotOk($test, 'Error');
             }
@@ -460,10 +460,10 @@ namespace PHPUnit\Util\Log {
              * Incomplete test.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param \Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addIncompleteTest(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->writeNotOk($test, '', 'TODO Incomplete Test');
             }
@@ -472,10 +472,10 @@ namespace PHPUnit\Util\Log {
              * Risky test.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addRiskyTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addRiskyTest(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->write(
                     sprintf(
@@ -492,10 +492,10 @@ namespace PHPUnit\Util\Log {
              * Skipped test.
              *
              * @param \PHPUnit\Framework\Test $test
-             * @param Exception $e
+             * @param \Exception|\Throwable  $e
              * @param float $time
              */
-            public function addSkippedTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+            public function addSkippedTest(\PHPUnit\Framework\Test $test, $e, $time)
             {
                 $this->write(
                     sprintf(
