@@ -77,7 +77,7 @@ class UI extends \PHPUnit\TextUI\ResultPrinter
         $this->lastTestFailed = false;
     }
 
-    public function addError(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+    public function addError(\PHPUnit\Framework\Test $test, $e, $time)
     {
         $this->lastTestFailed = true;
     }
@@ -92,12 +92,12 @@ class UI extends \PHPUnit\TextUI\ResultPrinter
         $this->lastTestFailed = true;
     }
 
-    public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+    public function addIncompleteTest(\PHPUnit\Framework\Test $test, $e, $time)
     {
         $this->lastTestFailed = true;
     }
 
-    public function addSkippedTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+    public function addSkippedTest(\PHPUnit\Framework\Test $test, $e, $time)
     {
         $this->lastTestFailed = true;
     }

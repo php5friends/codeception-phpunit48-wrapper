@@ -31,11 +31,11 @@ class Listener implements \PHPUnit\Framework\TestListener
      * Risky test.
      *
      * @param PHPUnit\Framework\Test $test
-     * @param Exception $e
+     * @param \Exception|\Throwable  $e
      * @param float $time
      * @since  Method available since Release 4.0.0
      */
-    public function addRiskyTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+    public function addRiskyTest(\PHPUnit\Framework\Test $test, $e, $time)
     {
     }
 
@@ -45,7 +45,7 @@ class Listener implements \PHPUnit\Framework\TestListener
         $this->fire(Events::TEST_FAIL, new FailEvent($test, $time, $e));
     }
 
-    public function addError(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+    public function addError(\PHPUnit\Framework\Test $test, $e, $time)
     {
         $this->unsuccessfulTests[] = spl_object_hash($test);
         $this->fire(Events::TEST_ERROR, new FailEvent($test, $time, $e));
@@ -58,7 +58,7 @@ class Listener implements \PHPUnit\Framework\TestListener
         $this->fire(Events::TEST_WARNING, new FailEvent($test, $time, $e));
     }
 
-    public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+    public function addIncompleteTest(\PHPUnit\Framework\Test $test, $e, $time)
     {
         if (in_array(spl_object_hash($test), $this->skippedTests)) {
             return;
@@ -68,7 +68,7 @@ class Listener implements \PHPUnit\Framework\TestListener
         $this->skippedTests[] = spl_object_hash($test);
     }
 
-    public function addSkippedTest(\PHPUnit\Framework\Test $test, \Exception $e, $time)
+    public function addSkippedTest(\PHPUnit\Framework\Test $test, $e, $time)
     {
         if (in_array(spl_object_hash($test), $this->skippedTests)) {
             return;

@@ -1,6 +1,6 @@
 {
-    "name": "codeception/phpunit-wrapper",
-    "description": "PHPUnit classes used by Codeception",
+    "name": "php5friends/codeception-phpunit48-wrapper",
+    "description": "PHPUnit48 classes used by Codeception",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -13,9 +13,9 @@
         "codeception/phpunit-wrapper": "*"
     },
     "require": {
-        "phpunit/phpunit": ">=5.7.27 <6.5.13",
-        "phpunit/php-code-coverage": ">=4.0.4 <6.0",
-        "sebastian/comparator": ">=1.2.4 <3.0",
+        "php5friends/phpunit48": ">=4.8.40",
+        "phpunit/php-code-coverage": ">=2.2.4 <6.0",
+        "sebastian/comparator": "~1.2.4",
         "sebastian/diff": ">=1.4 <4.0"
 
     },

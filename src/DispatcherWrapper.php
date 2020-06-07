@@ -17,7 +17,7 @@ trait DispatcherWrapper
     protected function dispatch(EventDispatcher $dispatcher, $eventType, Event $eventObject)
     {
         //TraceableEventDispatcherInterface was introduced in symfony/event-dispatcher 2.5 and removed in 5.0
-        if (!interface_exists(TraceableEventDispatcherInterface::class)) {
+        if (!interface_exists('\Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcherInterface')) {
             //Symfony 5
             $dispatcher->dispatch($eventObject, $eventType);
         } else {
